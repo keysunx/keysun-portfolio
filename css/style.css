@@ -65,47 +65,43 @@ body {
     background: white;
     color: black;
 }
-/* ===========================
-   NAVBAR
-=========================== */
+/* NAVBAR */
 
-nav {
-    width: 100%;
-    padding: 25px 80px;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    position: fixed;
-    top: 0;
-    left: 0;
-
-    z-index: 1000;
+.navbar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    padding:22px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:rgba(10,10,10,.75);
+    backdrop-filter:blur(18px);
+    z-index:1000;
 }
 
-.logo {
-    font-size: 28px;
-    font-weight: bold;
+.logo{
+    color:#fff;
+    text-decoration:none;
+    font-size:22px;
+    font-weight:700;
+    letter-spacing:2px;
 }
 
-nav ul {
-    display: flex;
-    gap: 40px;
-
-    list-style: none;
+.nav-links{
+    display:flex;
+    gap:35px;
 }
 
-nav a {
-    text-decoration: none;
-    color: white;
-    font-size: 16px;
-
-    transition: 0.3s;
+.nav-links a{
+    color:#ccc;
+    text-decoration:none;
+    transition:.3s;
 }
 
-nav a:hover {
-    color: #999;
+.nav-links a:hover{
+    color:#fff;
 }
 /* ===========================
    SELECTED WORK
@@ -128,47 +124,37 @@ nav a:hover {
 }
 
 .project-card{
-
-    background:#111;
-
-    border:1px solid rgba(255,255,255,.08);
-
-    border-radius:18px;
-
-    padding:35px;
-
-    transition:.35s;
+    background:transparent;
+    border:none;
+    border-bottom:1px solid rgba(255,255,255,.08);
+    border-radius:0;
+    padding:50px 0;
+    transition:.3s;
 }
-
 .project-card:hover{
-
-    transform:translateY(-10px);
-
-    border-color:white;
+    transform:translateX(10px);
 }
-
+.project-number{
+    color:#666;
+    font-size:14px;
+    letter-spacing:2px;
+}
 .project-card h3{
-
-    font-size:28px;
-
-    margin-bottom:15px;
+    font-size:42px;
+    margin:20px 0;
 }
-
 .project-card p{
-
+    max-width:600px;
     color:#999;
-
+    line-height:1.8;
     margin-bottom:30px;
 }
-
 .project-card a{
-
     color:white;
-
     text-decoration:none;
-
     font-weight:600;
 }
+
 /* ===========================
    ABOUT
 =========================== */
@@ -287,4 +273,36 @@ footer{
     padding:40px;
     color:#666;
     border-top:1px solid rgba(255,255,255,.08);
+}
+/* PROJECT PAGE */
+
+.project{
+    max-width:900px;
+    margin:auto;
+    padding:120px 20px;
+}
+
+.project span{
+    color:#666;
+}
+
+.project h1{
+    font-size:64px;
+    margin:20px 0;
+}
+
+.project p{
+    color:#999;
+    line-height:1.8;
+    margin-bottom:50px;
+}
+
+.project h2{
+    margin-bottom:25px;
+}
+
+.project a{
+    color:white;
+    text-decoration:none;
+    font-size:18px;
 }
