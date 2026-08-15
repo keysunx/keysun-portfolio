@@ -2,221 +2,349 @@
 <html lang="en">
 
 <head>
-    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <title>KEYSUN | Video Editor Portfolio</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230a0a0f'/%3E%3Ctext x='50' y='68' font-size='58' font-family='Poppins,sans-serif' font-weight='700' fill='%238b5cf6' text-anchor='middle'%3EK%3C/text%3E%3C/svg%3E">
     <meta name="description" content="KEYSUN is a video editor specializing in short-form content, brand storytelling, and social media campaigns.">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>KEYSUN | Video Editor</title>
-<link rel="stylesheet" href="css/style.css">
-   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
-   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
+    <div class="bg-glow glow-1"></div>
+    <div class="bg-glow glow-2"></div>
+    <div class="bg-glow glow-3"></div>
+    <div class="noise"></div>
 
-    <!-- Navbar -->
-     <nav class="navbar">
+    <!-- =========================
+         HEADER / NAVIGATION
+    ========================= -->
+    <nav class="navbar">
+        <a href="#hero" class="logo">KEYSUN</a>
 
-    <a href="#" class="logo">KEYSUN</a>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
 
-    <ul class="nav-links">
-        <li><a href="#work">Work</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
+        <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
 
-</nav>
+    <!-- =========================
+         HERO SECTION
+    ========================= -->
+    <section class="hero" id="hero">
 
+        <!-- Hero copy + CTAs -->
+        <div class="hero-left">
+            <p class="hero-tag">VIDEO EDITOR &amp; CONTENT CREATOR</p>
 
+            <h1>I turn ideas into 
+                <span class="gradient-text">engaging</span> videos.</h1>
 
-    <!-- Hero -->
-<section class="hero" data-aos="fade-up">
-
-    <p class="hero-tag">VIDEO EDITOR • CONTENT CREATOR</p>
-
-    <h1>
-        Stories that stop scrolling. Edits that people remember.
-    </h1>
-
-    <p class="hero-description">
-        Helping brands and businesses grow through
-        engaging social media content, commercials,
-        and cinematic storytelling.
-    </p>
-
-    <div class="hero-buttons">
-        <a href="#work" class="btn-primary">View Work</a>
-        <a href="#contact" class="btn-secondary">Contact Me</a>
-    </div>
-
-</section>
-
-
-    <!-- Featured Work -->
-
-<section id="work" class="featured-work" data-aos="fade-up">
-    <div class="section-title">
-        <p>SELECTED WORK</p>
-        <h2>Featured Projects</h2>
-    </div>
-
-    <div class="project-card">
-
-        <div class="project-number">
-            01
-        </div>
-
-        <div class="project-info">
-
-            <h3>Pahi Investment</h3>
-
-            <p>
-                Social media video editing for an investment company,
-                creating engaging Instagram Reels to increase reach
-                and audience engagement.
+            <p class="hero-description">
+                I help brands connect with people through cinematic
+                and scroll-stopping content.
             </p>
 
-            <a href="project-pahi.html">
-                View Project →
+            <div class="hero-buttons">
+                <a href="#work" class="btn-primary">
+                    View Work
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
+
+                <a href="#contact" class="btn-secondary">Contact Me</a>
+            </div>
+        </div>
+
+        <!-- =========================
+             HERO VISUAL
+             A custom-designed "video export" scene:
+             a floating glass preview card (footage, scrubber,
+             waveform) orbited by a color-grading ring, a
+             film-strip, and floating status chips.
+             See CSS section "HERO VISUAL" in style.css and
+             JS section "HERO VISUAL PARALLAX" in script.js.
+        ========================= -->
+        <div class="hero-right">
+
+            <div class="hero-visual">
+
+                <!-- Rotating color-grade rings behind the card -->
+                <div class="visual-ring ring-outer"></div>
+                <div class="visual-ring ring-inner"></div>
+
+                <!-- Film-strip clips -->
+                <div class="filmstrip">
+                    <span class="film-frame"></span>
+                    <span class="film-frame"></span>
+                    <span class="film-frame"></span>
+                    <span class="film-frame"></span>
+                    <span class="film-frame"></span>
+                </div>
+
+                <!-- Main glass preview card -->
+                <div class="frame-card">
+
+                    <div class="frame-topbar">
+                        <span class="frame-dot dot-purple"></span>
+                        <span class="frame-dot dot-blue"></span>
+                        <span class="frame-dot dot-green"></span>
+                        <span class="frame-filename">showreel_final.mp4</span>
+                    </div>
+
+                    <div class="frame-preview">
+                        <div class="frame-gradient"></div>
+                        <div class="scan-line"></div>
+                        <div class="play-button">
+                            <span class="play-icon"></span>
+                        </div>
+                    </div>
+
+                    <div class="frame-scrubber">
+                        <div class="scrub-track">
+                            <div class="scrub-fill"></div>
+                            <div class="scrub-playhead"></div>
+                        </div>
+                    </div>
+
+                    <div class="frame-waveform">
+                        <span></span><span></span><span></span><span></span>
+                        <span></span><span></span><span></span><span></span>
+                        <span></span>
+                    </div>
+
+                </div>
+
+                <!-- Floating status chips -->
+                <div class="chip-pr">Pr</div>
+
+                <div class="chip-quality">
+                    <span class="chip-dot"></span>
+                    4K &middot; 60FPS
+                </div>
+
+                <div class="export-badge" style="--progress: 98;">
+                    <span class="export-percent">98%</span>
+                    <span class="export-label">Exporting</span>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- =========================
+         ABOUT SECTION
+    ========================= -->
+    <section id="about" class="about">
+
+        <p class="hero-tag">ABOUT</p>
+        <h2>Creating videos that help brands connect with people.</h2>
+
+        <p class="about-text">
+            I'm KEYSUN, a video editor with experience creating short-form content
+            for investment and fashion brands. I enjoy turning ideas into engaging
+            videos that capture attention and communicate messages clearly.
+            My primary tools are Adobe Premiere Pro, After Effects, and Photoshop,
+            and I'm currently available for remote full-time opportunities.
+        </p>
+
+        <div class="about-stats">
+
+            <div class="stat-card">
+                <div class="icon-badge purple">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3.5 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                </div>
+                <h3>1+</h3>
+                <p>Years Experience</p>
+            </div>
+
+            <div class="stat-card glow-purple">
+                <div class="icon-badge purple">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                </div>
+                <h3>50+</h3>
+                <p>Videos Edited</p>
+            </div>
+            <div class="stat-card">
+                <div class="icon-badge purple-solid">Pr</div>
+                <h3>Premiere Pro</h3>
+                <p>Primary Tool</p>
+            </div>
+
+            <div class="stat-card glow-green">
+                <div class="icon-badge green">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M3 12h18M12 3c2.5 2.5 3.8 5.6 3.8 9s-1.3 6.5-3.8 9c-2.5-2.5-3.8-5.6-3.8-9s1.3-6.5 3.8-9z" stroke="currentColor" stroke-width="2"/></svg>
+                </div>
+                <h3>Remote</h3>
+                <p>Available</p>
+            </div>
+
+        </div>
+
+        <!-- =========================
+             SKILLS SECTION
+        ========================= -->
+        <div class="skills">
+
+            <p class="hero-tag">SKILLS</p>
+            <h2 class="skills-title">Tools &amp; Expertise</h2>
+
+            <div class="skills-grid">
+
+                <div class="skill-card glow-purple">
+                    <div class="skill-top">
+                        <div class="icon-badge purple">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M15 10l5-3v10l-5-3" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><rect x="3" y="6" width="12" height="12" rx="2" stroke="currentColor" stroke-width="2"/></svg>
+                        </div>
+                        <span class="skill-label">01</span>
+                    </div>
+                    <h3>Video Editing</h3>
+                    <p>Adobe Premiere Pro • Social Media Reels</p>
+                </div>
+
+            
+
+              
+                <div class="skill-card glow-green">
+                    <div class="skill-top">
+                        <div class="icon-badge green">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M3 17l6-6 4 4 8-8M21 7v6M15 7h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </div>
+                        <span class="skill-label">02</span>
+                    </div>
+                    <h3>Content Strategy</h3>
+                    <p>Short-form Content • Brand Storytelling</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================
+         PROJECTS / WORK SECTION
+    ========================= -->
+    <section id="work" class="featured-work">
+
+        <div class="section-header">
+            <div class="section-title">
+                <p class="hero-tag">FEATURED WORK</p>
+                <h2>Recent Projects</h2>
+            </div>
+
+            <a href="projects.html" class="btn-secondary btn-view-all">
+                View All Work
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+        </div>
+
+        <div class="projects-grid">
+
+            <!-- Project 01 -->
+            <a href="project-pahi.html" class="project-card">
+                <div class="project-media fallback-purple">
+                    <img src="assets/images/project/pahi-investment.jpg" alt="Pahi Investment" onerror="this.remove()">
+                    <span class="project-number">01</span>
+                    <div class="media-icon">
+                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M3 17l5-5 4 4 8-9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                </div>
+                <div class="project-body">
+                    <div>
+                        <h3>Pahi Investment</h3>
+                        <p>Social Media Reels</p>
+                    </div>
+                    <span class="project-arrow">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </span>
+                </div>
             </a>
 
-        </div>
-
-    </div>
-
-    <div class="project-card">
-
-        <div class="project-number">
-            02
-        </div>
-
-        <div class="project-info">
-
-            <h3>Harrington Nepal</h3>
-
-            <p>
-                Premium fashion campaign edits for a luxury clothing
-                brand with cinematic storytelling and social media
-                focused content.
-            </p>
-
-            <a href="project-harrington.html">
-                View Project →
+            <!-- Project 02 -->
+            <a href="project-harrington.html" class="project-card">
+                <div class="project-media fallback-blue">
+                    <img src="assets/images/harrington-thumbnail.jpg" alt="Harrington Nepal" onerror="this.remove()">
+                    <span class="project-number">02</span>
+                </div>
+                <div class="project-body">
+                    <div>
+                        <h3>Harrington Nepal</h3>
+                        <p>Brand Promo</p>
+                    </div>
+                    <span class="project-arrow">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </span>
+                </div>
             </a>
 
+           
+        </div>
+    </section>
+
+    <!-- =========================
+         CONTACT SECTION
+    ========================= -->
+    <section id="contact" class="contact">
+
+        <p class="hero-tag">CONTACT</p>
+        <h2>Let's work together.</h2>
+
+        <p class="contact-text">
+            I'm currently available for remote full-time opportunities and freelance
+            projects. If you'd like to work together, feel free to get in touch.
+        </p>
+
+        <div class="contact-links">
+
+            <a href="mailto:keshanroka1111@gmail.com" class="contact-link purple">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="2"/><path d="M3 7l9 6 9-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Email
+            </a>
+
+            <a href="https://www.linkedin.com/in/keshanroka/" target="_blank" rel="noopener noreferrer" class="contact-link blue">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 8.98h4v12H3v-12zM9 8.98h3.8v1.64h.05c.53-1 1.83-2.06 3.77-2.06 4.03 0 4.78 2.65 4.78 6.1v6.32h-4v-5.6c0-1.34-.02-3.06-1.87-3.06-1.87 0-2.16 1.46-2.16 2.96v5.7H9v-12z"/></svg>
+                LinkedIn
+            </a>
+
+        
+        </div>
+    </section>
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+    <footer class="footer">
+
+        <div class="footer-logo">
+            <h2>KEYSUN</h2>
+            <p>Video Editor • Content Creator</p>
         </div>
 
-    </div>
+        <p class="copyright">© 2026 KEYSUN. All rights reserved.</p>
 
-</section>
-
-   <!-- About -->
-
-<section id="about" class="about" data-aos="fade-up">
-
-    <p class="hero-tag">ABOUT</p>
-
-    <h2>Creating videos that help brands connect with people.</h2>
-
-    <p class="about-text">
-        I'm KEYSUN, a video editor with experience creating short-form content
-        for investment and fashion brands. I enjoy turning ideas into engaging
-        videos that capture attention and communicate messages clearly.
-        My primary tools are Adobe Premiere Pro, After Effects, and Photoshop,
-        and I'm currently available for remote full-time opportunities.
-    </p>
-    <section class="skills">
-
-    <p class="hero-tag">SKILLS</p>
-
-    <h2>Tools & Expertise</h2>
-
-    <div class="skills-grid">
-
-        <div class="skill-card">
-            <h3>Video Editing</h3>
-            <p>Adobe Premiere Pro</p>
+        <div class="footer-links">
+            <a href="https://github.com/keysunx" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 00-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.53 2.36 1.09 2.94.83.09-.65.35-1.09.63-1.34-2.22-.25-4.56-1.11-4.56-4.93 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.4 9.4 0 015 0c1.91-1.3 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.83-2.34 4.68-4.57 4.92.36.31.68.92.68 1.85v2.75c0 .26.18.58.69.48A10 10 0 0012 2z"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/keshanroka/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 8.98h4v12H3v-12zM9 8.98h3.8v1.64h.05c.53-1 1.83-2.06 3.77-2.06 4.03 0 4.78 2.65 4.78 6.1v6.32h-4v-5.6c0-1.34-.02-3.06-1.87-3.06-1.87 0-2.16 1.46-2.16 2.96v5.7H9v-12z"/></svg>
+            </a>
+            <a href="mailto:keshanroka1111@gmail.com" aria-label="Email">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="2"/><path d="M3 7l9 6 9-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
         </div>
 
-        <div class="skill-card">
-            <h3>Motion Graphics</h3>
-            <p>After Effects</p>
-        </div>
+    </footer>
 
-        <div class="skill-card">
-            <h3>Graphic Design</h3>
-            <p>Adobe Photoshop</p>
-        </div>
-
-        <div class="skill-card">
-            <h3>Content Strategy</h3>
-            <p>Short-form Social Media Content</p>
-        </div>
-
-    </div>
-
-</section>
-
-</section>
-  <!-- Contact -->
-
-<section id="contact" class="contact" data-aos="fade-up">
-
-    <p class="hero-tag">CONTACT</p>
-
-    <h2>Let's work together.</h2>
-
-    <p class="contact-text">
-        I'm currently available for remote full-time opportunities and freelance projects. If you'd like to work together, feel free to get in touch.
-    </p>
-
-    <div class="contact-links">
-
-        <a href="mailto:keshanroka1111@gmail.com">Email</a>
-
-        <a href="https://www.linkedin.com/in/keshanroka/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-
-        <a href="assets/resume/Resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
-
-    </div>
-
-</section>
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-
-<script>
-AOS.init({
-    duration:800,
-    once:true,
-    offset:100
-});
-</script>
-<footer class="footer">
-
-    <div class="footer-logo">
-        <h2>KEYSUN</h2>
-        <p>Video Editor • Content Creator</p>
-    </div>
-
-    <div class="footer-links">
-
-        <a href="mailto:keshanroka1111@gmail.com">Email</a>
-
-        <a href="https://github.com/keysunx" target="_blank"rel="noopener noreferrer">GitHub</a>
-
-        <a href="https://www.linkedin.com/in/keshanroka/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-
-        <a href="assets/resume/Resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
-
-    </div>
-
-    <p class="copyright">
-        © 2026 KEYSUN. All rights reserved.
-    </p>
-
-</footer>
+    <script src="js/script.js"></script>
 </body>
 
 </html>
